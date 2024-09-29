@@ -15,7 +15,8 @@ function updateUsername() {
             profileImage.style.display = 'block'; // Show the image
             console.log("Profile Image URL:", user.photo_url); // Debugging: log the profile image URL
         } else {
-            profileImage.style.display = 'none'; // Hide the image if no URL
+            profileImage.style.display = 'block'; // Hide the image if no URL
+            profileImage.src = "icon.png";
         }
     } else {
         usernameElement.innerText = 'No User Data';
