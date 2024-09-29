@@ -1,17 +1,18 @@
 // Function to update username
         function updateUsername() {
             const user = Telegram.WebApp.initDataUnsafe.user;
+            const profileImage = document.getElementById('profile-image');
             console.log("User data:", user); // Debugging: log user data
+            console.log("Profile Image URL:", user.photo_url);
             if (user) {
                 document.getElementById('user').innerText = user.username || 'No Username';
                 const reff = user.id
-                if (user.photo_url) {
-                    const profileImage = document.getElementById('profile-image');
-                    profileImage.src = user.photo_url;
-                    profileImage.style.display = 'block'; // Show the image
-                }
+                profileImage.src = user.photo_url;
+                profileImage.style.display = 'block';
             } else {
                 document.getElementById('user').innerText = 'No User Data';
+                profileImage.src = "icon.png";
+                profileImage.style.display = 'block';
             }
         }
         document.addEventListener("DOMContentLoaded", function() {
