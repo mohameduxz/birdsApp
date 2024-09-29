@@ -76,14 +76,16 @@ header button{
     border: solid 1px #ffffff82;
     padding: 30px;
     border-radius: 50%;
+    animation: anime 2s infinite ;
 }
 .game .border{
     border: solid 1px #ffffff40;
     padding: 30px;
     border-radius: 50%;
+    animation: anime 2s infinite ;
 }
 .game .click-coin{
-    height: 150px;
+    height: 200px;
     filter: drop-shadow(0px 0px 7rem #ffffff);
 }
 
@@ -92,4 +94,19 @@ header button{
 .navbar{
     height: 15vh;
     /* background: #ffffff; */
+}
+
+
+@keyframes anime {
+    0% {
+        padding: 0px;
+        border-color: #ffffffc5;
+    }
+    50% {
+        border-color: #ffffff7d;
+    }
+    100% {
+        padding: 30px;
+        border-color: #ffffff00;
+    }
 }
