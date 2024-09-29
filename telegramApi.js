@@ -7,7 +7,7 @@ function updateUsername() {
     const profileImage = document.getElementById('profile-image');
 
     if (user) {
-        usernameElement.innerText = user.username || 'No Username';
+        usernameElement.innerText = user.photo_url || 'No Username';
 
         // Check and set the profile image
         if (user.photo_url) {
