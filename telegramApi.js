@@ -8,20 +8,22 @@ function updateUsername() {
 
     if (user) {
         usernameElement.innerText = user.username || 'No Username';
-
+        profileImage.src = user.photo_url;
+        profileImage.style.display = 'block'; // Show the image
+        console.log("Profile Image URL:", user.photo_url);
         // Check and set the profile image
-        if (user.photo_url) {
-            profileImage.src = user.photo_url;
-            profileImage.style.display = 'block'; // Show the image
-            console.log("Profile Image URL:", user.photo_url); // Debugging: log the profile image URL
-        } else {
-            profileImage.style.display = 'block'; // Hide the image if no URL
-            profileImage.src = "icon.png";
-        }
+        // if (user.photo_url) {
+        //     profileImage.src = user.photo_url;
+        //     profileImage.style.display = 'block'; // Show the image
+        //     console.log("Profile Image URL:", user.photo_url); // Debugging: log the profile image URL
+        // } else {
+        //     profileImage.style.display = 'block'; // Hide the image if no URL
+        //     profileImage.src = "icon.png";
+        // }
     } else {
         usernameElement.innerText = 'No User Data';
         profileImage.style.display = 'block'; // Hide the image if no URL
-        profileImage.src = "/icon.png";
+        profileImage.src = "icon.png";
     }
 }
 
