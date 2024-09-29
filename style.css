@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    font-family: "Roboto", sans-serif;
+    
+}
 body {
     height: var(--tg-viewport-stable-height, 100vh);
     width: 100%;
@@ -104,15 +108,11 @@ main{
     width: 100%;
     margin: 10px;
 }
-.tasks{
-    border: solid .5px #9fd7ffd3;
-    background: #44a2ff;
-    padding: 10px;
-    border-radius: 10px;
-}
 
 /* navbar */
 .navbar{
+    font-size: medium;
+    font-weight: 400;
     height: 8vh;
     /* background: #ffffff; */
     border: solid .5px #9fd7ffd3;
@@ -121,8 +121,15 @@ main{
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
-
+.icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 @keyframes anime {
     0% {
