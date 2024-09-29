@@ -7,20 +7,20 @@ function updateUsername() {
     const profileImage = document.getElementById('profile-image');
 
     if (user) {
-        usernameElement.innerText = user.photo_url || 'No Username';
+        usernameElement.innerText = user.username || 'No Username';
 
         // Check and set the profile image
         if (user.photo_url) {
-            profileImage.src = "user.photo_url";
+            profileImage.src = user.photo_url;
             profileImage.style.display = 'block'; // Show the image
             console.log("Profile Image URL:", user.photo_url); // Debugging: log the profile image URL
         } else {
-            profileImage.style.display = 'block'; // Hide the image if no URL
+            profileImage.style.display = 'block'; 
             profileImage.src = "icon.png";
         }
     } else {
         usernameElement.innerText = 'No User Data';
-        profileImage.style.display = 'block'; // Hide the image if no URL
+        profileImage.style.display = 'block'; 
         profileImage.src = "icon.png";
     }
 }
