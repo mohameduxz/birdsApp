@@ -20,6 +20,8 @@ function updateUsername() {
         }
     } else {
         usernameElement.innerText = 'No User Data';
+        profileImage.style.display = 'block'; // Hide the image if no URL
+        profileImage.src = "/icon.png";
     }
 }
 
