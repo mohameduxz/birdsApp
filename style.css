@@ -72,6 +72,16 @@ header button{
 }
 
 /* click game */
+
+main{
+    width: 100%;
+}
+.game-border{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .game .click{
     border: solid 1px #ffffff82;
     padding: 30px;
@@ -89,11 +99,28 @@ header button{
     filter: drop-shadow(0px 0px 7rem #ffffff);
 }
 
+/* farming */
+.farming{
+    width: 100%;
+    margin: 10px;
+}
+.tasks{
+    border: solid .5px #9fd7ffd3;
+    background: #44a2ff;
+    padding: 10px;
+    border-radius: 10px;
+}
 
 /* navbar */
 .navbar{
-    height: 15vh;
+    height: 8vh;
     /* background: #ffffff; */
+    border: solid .5px #9fd7ffd3;
+    background: #44a2ff;
+    width: -webkit-fill-available;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 
