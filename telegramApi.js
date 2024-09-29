@@ -1,37 +1,35 @@
-// Function to update username
-        function updateUsername() {
-            const user = Telegram.WebApp.initDataUnsafe.user;
-            const profileImage = document.getElementById('profile-image');
-            console.log("User data:", user); // Debugging: log user data
-            console.log("Profile Image URL:", user.photo_url);
-            if (user) {
-                document.getElementById('user').innerText = user.username || 'No Username';
-                const reff = user.id
-                profileImage.src = user.photo_url;
-                profileImage.style.display = 'block';
-            } else {
-                document.getElementById('user').innerText = 'No User Data';
-                profileImage.src = "icon.png";
-                profileImage.style.display = 'block';
-            }
+// Function to update username and profile image
+function updateUsername() {
+    const user = Telegram.WebApp.initDataUnsafe.user;
+    console.log("User data:", user); // Debugging: log user data
+
+    const usernameElement = document.getElementById('user');
+    const profileImage = document.getElementById('profile-image');
+
+    if (user) {
+        usernameElement.innerText = user.username || 'No Username';
+
+        // Check and set the profile image
+        if (user.photo_url) {
+            profileImage.src = user.photo_url;
+            profileImage.style.display = 'block'; // Show the image
+            console.log("Profile Image URL:", user.photo_url); // Debugging: log the profile image URL
+        } else {
+            profileImage.style.display = 'none'; // Hide the image if no URL
         }
-        document.addEventListener("DOMContentLoaded", function() {
-            Telegram.WebApp.ready();
-            Telegram.WebApp.expand();
-            Telegram.WebApp.MainButton.hide();
-            Telegram.WebApp.setHeaderColor("#000000");
-        });
-        
+    } else {
+        usernameElement.innerText = 'No User Data';
+    }
+}
 
-        // Ensure the Web App is ready before accessing user data
-        Telegram.WebApp.ready(() => {
-            console.log("Telegram WebApp is ready"); // Debugging: log when WebApp is ready
-            updateUsername();
-        });
+// Ensure the Web App is ready before accessing user data
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded and parsed"); // Debugging: log when DOM is loaded
 
-        // Additional event listener to ensure the script runs when the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("DOM fully loaded and parsed"); // Debugging: log when DOM is loaded
-            updateUsername();
-        });
-    
+    Telegram.WebApp.ready(); // Initialize the Telegram Web App
+    Telegram.WebApp.expand(); // Expand the Web App
+    Telegram.WebApp.MainButton.hide(); // Hide the main button
+    Telegram.WebApp.setHeaderColor("#000000"); // Set the header color
+
+    updateUsername(); // Call the function to update username and profile image
+});
